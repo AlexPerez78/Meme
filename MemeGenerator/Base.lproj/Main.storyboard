@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYX-vP-r0L">
+                                <rect key="frame" x="180" y="181" width="240" height="237"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Fill Text In Here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-rZ-sk4" userLabel="MemeTextField1">
+                                <rect key="frame" x="180" y="181" width="240" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Fill Text In Here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-Al-0Ck" userLabel="MemeTextField2">
+                                <rect key="frame" x="180" y="378" width="240" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfW-yP-Jab">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem width="65" style="plain" systemItem="fixedSpace" id="OA9-6n-BqL"/>
+                                    <barButtonItem image="Camera_Icon" id="zVM-Pq-cq8">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="jS9-KQ-aEf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="108" style="plain" systemItem="fixedSpace" id="WoM-KW-dqt"/>
+                                    <barButtonItem title="Album" id="qf6-qh-Hzc">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="TFJ-H5-EOD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="wYX-vP-r0L" secondAttribute="centerX" id="AHG-ys-B1X"/>
+                            <constraint firstItem="kZL-rZ-sk4" firstAttribute="leading" secondItem="wYX-vP-r0L" secondAttribute="leading" id="UAz-Id-acn"/>
+                            <constraint firstItem="wYX-vP-r0L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="4:10" id="Z5q-jH-fui"/>
+                            <constraint firstItem="NMc-Al-0Ck" firstAttribute="leading" secondItem="wYX-vP-r0L" secondAttribute="leading" id="dDQ-mW-aaN"/>
+                            <constraint firstItem="QfW-yP-Jab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iTs-2N-J0S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QfW-yP-Jab" secondAttribute="trailing" constant="-20" id="l0t-Dh-74K"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QfW-yP-Jab" secondAttribute="bottom" id="nmU-Ie-FE6"/>
+                            <constraint firstItem="QfW-yP-Jab" firstAttribute="top" secondItem="wYX-vP-r0L" secondAttribute="bottom" constant="138" id="vwc-cd-BNo"/>
+                            <constraint firstItem="wYX-vP-r0L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yzf-aa-qln"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="zVM-Pq-cq8" id="tF9-89-frW"/>
+                        <outlet property="imagePickerView" destination="wYX-vP-r0L" id="3Nq-bI-Vj6"/>
+                        <outlet property="memeTextField1" destination="kZL-rZ-sk4" id="fD6-g1-fXc"/>
+                        <outlet property="memeTextField2" destination="NMc-Al-0Ck" id="w0n-Pv-UUb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="325" y="349"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Camera_Icon" width="64" height="90"/>
+    </resources>
+</document>
