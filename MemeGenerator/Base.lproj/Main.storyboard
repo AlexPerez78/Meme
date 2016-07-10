@@ -22,12 +22,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYX-vP-r0L">
                                 <rect key="frame" x="180" y="181" width="240" height="237"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Fill Text In Here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-rZ-sk4" userLabel="MemeTextField1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Top Text" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-rZ-sk4" userLabel="MemeTextField1">
                                 <rect key="frame" x="180" y="181" width="240" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Fill Text In Here" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-Al-0Ck" userLabel="MemeTextField2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-Al-0Ck" userLabel="MemeTextField2">
                                 <rect key="frame" x="180" y="378" width="240" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
@@ -41,10 +41,16 @@
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="jS9-KQ-aEf"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="108" style="plain" systemItem="fixedSpace" id="WoM-KW-dqt"/>
+                                    <barButtonItem width="37" style="plain" systemItem="fixedSpace" id="WoM-KW-dqt"/>
                                     <barButtonItem title="Album" id="qf6-qh-Hzc">
                                         <connections>
                                             <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="TFJ-H5-EOD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="29" style="plain" systemItem="fixedSpace" id="INm-cJ-ivy"/>
+                                    <barButtonItem title="Share" id="S5s-Eg-Cmv">
+                                        <connections>
+                                            <action selector="shareAction:" destination="BYZ-38-t0r" id="ZTe-VO-8v5"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -53,13 +59,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="wYX-vP-r0L" secondAttribute="centerX" id="AHG-ys-B1X"/>
-                            <constraint firstItem="kZL-rZ-sk4" firstAttribute="leading" secondItem="wYX-vP-r0L" secondAttribute="leading" id="UAz-Id-acn"/>
+                            <constraint firstItem="wYX-vP-r0L" firstAttribute="bottom" secondItem="NMc-Al-0Ck" secondAttribute="bottom" id="Go1-cT-fDv"/>
+                            <constraint firstItem="NMc-Al-0Ck" firstAttribute="centerX" secondItem="wYX-vP-r0L" secondAttribute="centerX" id="TXU-tF-FUg"/>
+                            <constraint firstItem="QfW-yP-Jab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VTp-fS-Xa6"/>
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="4:10" id="Z5q-jH-fui"/>
-                            <constraint firstItem="NMc-Al-0Ck" firstAttribute="leading" secondItem="wYX-vP-r0L" secondAttribute="leading" id="dDQ-mW-aaN"/>
+                            <constraint firstItem="wYX-vP-r0L" firstAttribute="centerX" secondItem="kZL-rZ-sk4" secondAttribute="centerX" id="fl7-bA-SKm"/>
                             <constraint firstItem="QfW-yP-Jab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iTs-2N-J0S"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QfW-yP-Jab" secondAttribute="trailing" constant="-20" id="l0t-Dh-74K"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QfW-yP-Jab" secondAttribute="bottom" id="nmU-Ie-FE6"/>
+                            <constraint firstItem="QfW-yP-Jab" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="278" id="rxJ-Lc-GCp"/>
+                            <constraint firstItem="wYX-vP-r0L" firstAttribute="top" secondItem="kZL-rZ-sk4" secondAttribute="top" id="voT-Vg-d4A"/>
                             <constraint firstItem="QfW-yP-Jab" firstAttribute="top" secondItem="wYX-vP-r0L" secondAttribute="bottom" constant="138" id="vwc-cd-BNo"/>
+                            <constraint firstItem="QfW-yP-Jab" firstAttribute="top" secondItem="NMc-Al-0Ck" secondAttribute="bottom" constant="278" id="w2s-Tc-n8f"/>
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yzf-aa-qln"/>
                         </constraints>
                     </view>
@@ -76,6 +87,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Camera_Icon" width="64" height="90"/>
+        <image name="Camera_Icon" width="42" height="60"/>
     </resources>
 </document>

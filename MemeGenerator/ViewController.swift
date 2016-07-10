@@ -16,7 +16,18 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBOutlet weak var memeTextField1: UITextField!
     @IBOutlet weak var memeTextField2: UITextField!
-
+    
+    var memedImage = UIImage()
+    var meme: Meme!
+    
+    struct Meme {
+        
+        var topText: String!
+        var bottomText: String!
+        var image:UIImage!
+        var memedImage: UIImage!
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.memeTextField1.delegate = self
@@ -39,8 +50,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         memeTextField1.defaultTextAttributes = memeTextAttributes
         memeTextField2.defaultTextAttributes = memeTextAttributes
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        memes = appDelegate.memes
+        //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate memes = appDelegate.memes
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -83,12 +93,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         return true;
     }
     //-----------------------------------------------------------------------------------------------------------------
-    
-    @IBAction func pickAnImage(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        self.presentViewController(imagePicker, animated: true, completion: nil)
-    }
 
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -107,13 +111,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imagePickerView.image = image
-            self.dismissViewControllerAnimated(true, completion: nil)
         }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        
-    }
+    //-----------------------------------------------------------------------------------------------------------------
+
     
     // Create a UIImage that combines the Image View and the Textfields
     func generateMemedImage() -> UIImage {
@@ -131,13 +134,20 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     func save() {
         //Create the meme
-        var meme = Meme( text: textField.text!, image:
-            imageView.image, memedImage: memedImage())
+        let meme = Meme(topText: memeTextField1.text!, bottomText: memeTextField2.text!, image: imagePickerView.image!,  memedImage: memedImage)
+        
+        self.meme = meme
         
         // Add it to the memes array in the Application Delegate
-        (UIApplication.sharedApplication().delegate as!
-            AppDelegate).memes.append(meme)
+        //(UIApplication.sharedApplication().delegate as! AppDelegate).memes.append(meme)
     }
-
+    
+    @IBAction func shareAction(sender: AnyObject) {
+        save()
+        
+        let ActivityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        
+        presentViewController(ActivityViewController, animated: true, completion: nil)
+    }
 }
 
