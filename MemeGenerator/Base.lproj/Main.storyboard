@@ -19,21 +19,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYX-vP-r0L">
-                                <rect key="frame" x="180" y="181" width="240" height="237"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYX-vP-r0L">
+                                <rect key="frame" x="124" y="122" width="384" height="370"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="wYX-vP-r0L" secondAttribute="height" multiplier="192:185" id="YFB-LY-oGe"/>
+                                </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Top Text" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-rZ-sk4" userLabel="MemeTextField1">
-                                <rect key="frame" x="180" y="181" width="240" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-Al-0Ck" userLabel="MemeTextField2">
-                                <rect key="frame" x="180" y="378" width="240" height="40"/>
+                                <rect key="frame" x="124" y="122" width="384" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfW-yP-Jab">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="521-Oo-OCw"/>
+                                    <constraint firstAttribute="width" secondItem="QfW-yP-Jab" secondAttribute="height" multiplier="150:11" id="p0U-d8-K8L"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem width="65" style="plain" systemItem="fixedSpace" id="OA9-6n-BqL"/>
                                     <barButtonItem image="Camera_Icon" id="zVM-Pq-cq8">
@@ -48,13 +50,18 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="29" style="plain" systemItem="fixedSpace" id="INm-cJ-ivy"/>
-                                    <barButtonItem title="Share" id="S5s-Eg-Cmv">
+                                    <barButtonItem enabled="NO" title="Share" id="S5s-Eg-Cmv">
                                         <connections>
                                             <action selector="shareAction:" destination="BYZ-38-t0r" id="ZTe-VO-8v5"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-Al-0Ck" userLabel="MemeTextField2">
+                                <rect key="frame" x="124" y="452" width="322" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -62,7 +69,6 @@
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="bottom" secondItem="NMc-Al-0Ck" secondAttribute="bottom" id="Go1-cT-fDv"/>
                             <constraint firstItem="NMc-Al-0Ck" firstAttribute="centerX" secondItem="wYX-vP-r0L" secondAttribute="centerX" id="TXU-tF-FUg"/>
                             <constraint firstItem="QfW-yP-Jab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VTp-fS-Xa6"/>
-                            <constraint firstItem="wYX-vP-r0L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="4:10" id="Z5q-jH-fui"/>
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="centerX" secondItem="kZL-rZ-sk4" secondAttribute="centerX" id="fl7-bA-SKm"/>
                             <constraint firstItem="QfW-yP-Jab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iTs-2N-J0S"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QfW-yP-Jab" secondAttribute="trailing" constant="-20" id="l0t-Dh-74K"/>
@@ -79,6 +85,7 @@
                         <outlet property="imagePickerView" destination="wYX-vP-r0L" id="3Nq-bI-Vj6"/>
                         <outlet property="memeTextField1" destination="kZL-rZ-sk4" id="fD6-g1-fXc"/>
                         <outlet property="memeTextField2" destination="NMc-Al-0Ck" id="w0n-Pv-UUb"/>
+                        <outlet property="shareButton" destination="S5s-Eg-Cmv" id="bUP-pY-1Ho"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

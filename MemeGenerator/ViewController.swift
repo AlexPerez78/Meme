@@ -13,6 +13,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     @IBOutlet weak var memeTextField1: UITextField!
     @IBOutlet weak var memeTextField2: UITextField!
