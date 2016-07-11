@@ -43,7 +43,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         let memeTextAttributes = [
             NSStrokeColorAttributeName : UIColor.whiteColor(),
-            NSForegroundColorAttributeName : UIColor.greenColor(),
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
             NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
             NSStrokeWidthAttributeName : 2.0
         ]
@@ -97,9 +97,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
+        imagePicker.delegate = self
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func pickAnImageFromCamera (sender: AnyObject) {

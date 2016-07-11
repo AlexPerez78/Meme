@@ -21,12 +21,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYX-vP-r0L">
                                 <rect key="frame" x="124" y="122" width="384" height="370"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wYX-vP-r0L" secondAttribute="height" multiplier="192:185" id="YFB-LY-oGe"/>
-                                </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Top Text" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-rZ-sk4" userLabel="MemeTextField1">
                                 <rect key="frame" x="124" y="122" width="384" height="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                             </textField>
@@ -50,15 +48,16 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="29" style="plain" systemItem="fixedSpace" id="INm-cJ-ivy"/>
-                                    <barButtonItem enabled="NO" title="Share" id="S5s-Eg-Cmv">
+                                    <barButtonItem title="Share" id="S5s-Eg-Cmv">
                                         <connections>
                                             <action selector="shareAction:" destination="BYZ-38-t0r" id="ZTe-VO-8v5"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-Al-0Ck" userLabel="MemeTextField2">
-                                <rect key="frame" x="124" y="452" width="322" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Bottom text" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NMc-Al-0Ck" userLabel="MemeTextField2">
+                                <rect key="frame" x="124" y="452" width="384" height="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="done"/>
                             </textField>
@@ -66,17 +65,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="wYX-vP-r0L" secondAttribute="centerX" id="AHG-ys-B1X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QfW-yP-Jab" secondAttribute="trailing" constant="-20" id="CUB-RT-SCh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QfW-yP-Jab" secondAttribute="bottom" id="CUt-yo-EZi"/>
+                            <constraint firstItem="wYX-vP-r0L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="16:25" id="GUx-Cb-fW0"/>
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="bottom" secondItem="NMc-Al-0Ck" secondAttribute="bottom" id="Go1-cT-fDv"/>
+                            <constraint firstItem="QfW-yP-Jab" firstAttribute="top" secondItem="NMc-Al-0Ck" secondAttribute="bottom" constant="64" id="Kuy-Nb-c11"/>
                             <constraint firstItem="NMc-Al-0Ck" firstAttribute="centerX" secondItem="wYX-vP-r0L" secondAttribute="centerX" id="TXU-tF-FUg"/>
                             <constraint firstItem="QfW-yP-Jab" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VTp-fS-Xa6"/>
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="centerX" secondItem="kZL-rZ-sk4" secondAttribute="centerX" id="fl7-bA-SKm"/>
-                            <constraint firstItem="QfW-yP-Jab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="iTs-2N-J0S"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QfW-yP-Jab" secondAttribute="trailing" constant="-20" id="l0t-Dh-74K"/>
+                            <constraint firstItem="QfW-yP-Jab" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="h3W-QC-LCw"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QfW-yP-Jab" secondAttribute="bottom" id="nmU-Ie-FE6"/>
                             <constraint firstItem="QfW-yP-Jab" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="278" id="rxJ-Lc-GCp"/>
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="top" secondItem="kZL-rZ-sk4" secondAttribute="top" id="voT-Vg-d4A"/>
-                            <constraint firstItem="QfW-yP-Jab" firstAttribute="top" secondItem="wYX-vP-r0L" secondAttribute="bottom" constant="138" id="vwc-cd-BNo"/>
-                            <constraint firstItem="QfW-yP-Jab" firstAttribute="top" secondItem="NMc-Al-0Ck" secondAttribute="bottom" constant="278" id="w2s-Tc-n8f"/>
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yzf-aa-qln"/>
                         </constraints>
                     </view>
