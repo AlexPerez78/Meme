@@ -15,6 +15,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var memeTextField1: UITextField!
     @IBOutlet weak var memeTextField2: UITextField!
     
@@ -54,6 +55,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         memeTextField1.defaultTextAttributes = memeTextAttributes
         memeTextField2.defaultTextAttributes = memeTextAttributes
+        
+        self.subscribeToKeyboardNotifications()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -77,11 +80,15 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        //if memeTextField2.isFirstResponder(){
+            self.view.frame.origin.y -= getKeyboardHeight(notification)/2
+        //}
     }
     
     func keyboardWillGoAway(notification: NSNotification){
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+        //if memeTextField1.isFirstResponder(){
+            self.view.frame.origin.y += getKeyboardHeight(notification)/2
+        //}
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
@@ -138,6 +145,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func generateMemedImage() -> UIImage {
         // TODO: Hide toolbar and navbar
         
+        toolbar.hidden = true
+        
         // render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
@@ -145,6 +154,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         UIGraphicsEndImageContext()
         
         // TODO:  Show toolbar and navbar
+        
+        toolbar.hidden = false
         return memedImage
     }
     
