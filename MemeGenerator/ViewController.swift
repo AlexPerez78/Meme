@@ -19,11 +19,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var memeTextField1: UITextField!
     @IBOutlet weak var memeTextField2: UITextField!
     
-    var memedImage = UIImage()
-    var meme: Meme!
-    
-    var memes: [Meme]!
-    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blueColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -110,6 +105,9 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         return true;
     }
     //-----------------------------------------------------------------------------------------------------------------
+    
+    //-----------------------------------------------------------------------------------------------------------------
+    //Image Part
 
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -139,7 +137,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
-        print ("did cancel called")
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -147,6 +144,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
 
     
     // Create a UIImage that combines the Image View and the Textfields
+    //Saving Imae/Sharing
     func generateMemedImage() -> UIImage {
         // TODO: Hide toolbar and navbar
         
@@ -188,5 +186,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         }
         
         //pass and present the ActivityViewController
-        presentViewController(activityController, animated: true, completion: nil)    }}
+        presentViewController(activityController, animated: true, completion: nil)}
+    //-----------------------------------------------------------------------------------------------------------------
+}
 
