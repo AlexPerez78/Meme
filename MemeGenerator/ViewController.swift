@@ -43,6 +43,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
+        memeTextField1.enabled = false
+        memeTextField2.enabled = false
         
         memeTextField1.delegate = self
         memeTextField2.delegate = self
@@ -107,6 +109,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         imagePicker.delegate = self
         shareButton.enabled = true
+        memeTextField1.enabled = true
+        memeTextField2.enabled = true
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
@@ -115,6 +119,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         shareButton.enabled = true
+        memeTextField1.enabled = true
+        memeTextField2.enabled = true
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
