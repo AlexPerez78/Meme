@@ -20,7 +20,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var memeTextField2: UITextField!
     
     let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.blueColor(),
+        NSStrokeColorAttributeName : UIColor.redColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSStrokeWidthAttributeName : 2
@@ -169,19 +169,13 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     @IBAction func shareAction(sender: AnyObject) {
         //genearate memed image
-        let image: UIImage = generateMemedImage()
+        let finalImage: UIImage = generateMemedImage()
         
         //define instance of ActivityViewController
-        let activityController = UIActivityViewController(activityItems:
-            [image], applicationActivities: nil)
+        let activityController = UIActivityViewController(activityItems:[finalImage], applicationActivities: nil)
         
-        activityController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
-            
-            //Call save button
-            self.save()
-            //Dismiss the pop up controller
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+        self.save()
+        self.dismissViewControllerAnimated(true, completion: nil)
         
         //Present the bottom popup of the activity to show options given to the user
         presentViewController(activityController, animated: true, completion: nil)}
