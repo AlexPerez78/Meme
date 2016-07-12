@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYX-vP-r0L">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYX-vP-r0L">
                                 <rect key="frame" x="108" y="115" width="384" height="370"/>
                             </imageView>
                             <textField clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Top" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kZL-rZ-sk4" userLabel="MemeTextField1">
@@ -65,7 +65,6 @@
                             <constraint firstAttribute="centerX" secondItem="wYX-vP-r0L" secondAttribute="centerX" id="AHG-ys-B1X"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QfW-yP-Jab" secondAttribute="trailing" constant="-20" id="CUB-RT-SCh"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QfW-yP-Jab" secondAttribute="bottom" id="CUt-yo-EZi"/>
-                            <constraint firstItem="wYX-vP-r0L" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="16:25" id="GUx-Cb-fW0"/>
                             <constraint firstItem="wYX-vP-r0L" firstAttribute="bottom" secondItem="NMc-Al-0Ck" secondAttribute="bottom" id="Go1-cT-fDv"/>
                             <constraint firstItem="QfW-yP-Jab" firstAttribute="top" secondItem="NMc-Al-0Ck" secondAttribute="bottom" constant="64" id="Kuy-Nb-c11"/>
                             <constraint firstItem="NMc-Al-0Ck" firstAttribute="centerX" secondItem="wYX-vP-r0L" secondAttribute="centerX" id="TXU-tF-FUg"/>

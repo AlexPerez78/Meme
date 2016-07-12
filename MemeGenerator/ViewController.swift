@@ -19,6 +19,8 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBOutlet weak var memeTextField1: UITextField!
     @IBOutlet weak var memeTextField2: UITextField!
     
+    let imagePicker = UIImagePickerController()
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.redColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -36,9 +38,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        imagePicker.delegate = self
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
+        
+        
         memeTextField1.enabled = false
         memeTextField2.enabled = false
         
@@ -110,28 +114,24 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     //Image Part
     
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        imagePicker.delegate = self
-        shareButton.enabled = true
-        memeTextField1.enabled = true
-        memeTextField2.enabled = true
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func pickAnImageFromCamera (sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        shareButton.enabled = true
-        memeTextField1.enabled = true
-        memeTextField2.enabled = true
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imagePickerView.contentMode = .ScaleAspectFit
             imagePickerView.image = image
+            
+            //Enable Share and textfields since there is an image in the imageView
+            shareButton.enabled = true
+            memeTextField1.enabled = true
+            memeTextField2.enabled = true
         }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
