@@ -138,6 +138,11 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        print ("did cancel called")
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     //-----------------------------------------------------------------------------------------------------------------
 
     
