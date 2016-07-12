@@ -108,7 +108,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     //-----------------------------------------------------------------------------------------------------------------
     //Image Part
-
+    
     @IBAction func pickAnImageFromAlbum(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -170,22 +170,20 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     @IBAction func shareAction(sender: AnyObject) {
         //genearate memed image
         let image: UIImage = generateMemedImage()
+        
         //define instance of ActivityViewController
         let activityController = UIActivityViewController(activityItems:
             [image], applicationActivities: nil)
         
         activityController.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems:[AnyObject]?, error: NSError?) in
             
-            // Return if cancelled
-            if (!completed) {
-                return
-            }
-            
+            //Call save button
             self.save()
+            //Dismiss the pop up controller
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
-        //pass and present the ActivityViewController
+        //Present the bottom popup of the activity to show options given to the user
         presentViewController(activityController, animated: true, completion: nil)}
     //-----------------------------------------------------------------------------------------------------------------
 }
