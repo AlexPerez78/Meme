@@ -22,10 +22,10 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     let imagePicker = UIImagePickerController()
     
     let memeTextAttributes = [
-        NSStrokeColorAttributeName : UIColor.redColor(),
-        NSForegroundColorAttributeName : UIColor.whiteColor(),
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName: UIColor.whiteColor(),
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName : 2
+        NSStrokeWidthAttributeName : -2.0
     ]
     
     struct Meme {
